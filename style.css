@@ -1,0 +1,132 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Mulish";
+    height: 100vh   ;
+    overflow: hidden;
+    margin: 0;
+    text-align: center;
+    color: white;
+}
+
+a {
+    color: white;
+}
+h1 {
+    line-height: 1.4;
+}
+
+.screen {
+    background-image: linear-gradient(90deg, rgb(28, 243, 122), rgb(234, 112, 6));
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100vw;
+    transition: margin .5s ease-out ;
+}
+.screen.up {
+    margin-top: -100vh;
+}
+
+.choose-food-btn img {
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.choose-food-btn{
+    color: white;
+    border: none;
+    margin: 10px;
+    background-color: transparent;
+    cursor: pointer;
+    font-family: inherit;
+    width: 150px;
+    height: 150px;
+}
+.choose-food-btn:hover {
+    opacity: .8;
+    background-image: linear-gradient(90deg, rgb(0, 213, 188), rgb(255, 79, 79));
+}
+
+.foods-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+}
+.foods-list li {
+    margin: 10px;
+}
+
+.btn {
+    border: 0;
+    background-image: linear-gradient(90deg, rgb(0, 213, 188), rgb(255, 79, 79));
+    color: #ffffff;
+    padding: 15px 20px;
+    font-family: inherit;
+    font-size: 1.5rem;
+    border-radius: 7%;
+    cursor: pointer;
+}
+.btn:hover {
+    opacity: 0.9;
+}
+.btn:focus {
+    outline: 0;
+}
+
+.game-container {
+    position: relative;
+}
+.time, .score{
+    position: absolute;
+    top: 20px;
+}
+.time {
+    left: 20px;
+}
+.score {
+    right: 20px;
+}
+.message {
+    line-height: 1.7;
+    font-size: 1.5rem;
+    background-image: linear-gradient(90deg, rgb(0, 213, 188), rgb(255, 79, 79));
+    width: 100%;
+    padding: 20px;
+    z-index: 100;
+    text-align: center;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -150%);
+    transition: transform .4s ease-in;
+}
+.message.visible {
+    transform: translate(-50%, 100%);
+    opacity: 1;
+}
+.food {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    width: .5rem;
+    height: .5rem;
+    position: absolute;
+    transform: translate(-50%, -50%) scale(1);
+    transition: transform .3s ease-in-out;
+}
+.food.caught {
+    transform: translate(-50%, -50%) scale(0);
+}
+.food img {
+    width: 80px;
+    height: auto;
+}
